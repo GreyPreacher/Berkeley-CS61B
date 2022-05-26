@@ -1,6 +1,11 @@
 /**
  * Created by jug on 1/22/18.
  */
+
+/*
+The error happens because in the 89th line of food.csv, the number
+of turnip is a negative -387128732.
+ */
 public class DebugExercise3 {
     public static int countTurnips(In in) {
         int totalTurnips = 0;
