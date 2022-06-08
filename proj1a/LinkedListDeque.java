@@ -20,8 +20,8 @@ public class LinkedListDeque<T> {
         }
     }
 
-    public Node sentinel;
-    public int size;
+    private Node sentinel;
+    private int size;
 
     public LinkedListDeque(){//initiate the deque
         sentinel=new Node(null,null);
@@ -87,7 +87,7 @@ public class LinkedListDeque<T> {
             return null;
         }
         Node p=sentinel;
-        for(int i=0;i<index;i++){
+        for(int i=0;i <= index;i++){
             p=p.next;
         }
         return p.item;
