@@ -26,10 +26,10 @@ public class ArrayDeque<T> {
 
     private int plus(int index,int length){
         index%=length;
-        if(index==length-1){
+        if ( index == length - 1 ){
             return 0;
         }
-        return index+1;
+        return index + 1;
     }
     private void extendArray(){
         T[] newArray=(T[]) new Object[length*2];
