@@ -22,7 +22,7 @@ public class ArrayDequeTest {
     }
 
     @Test(timeout = 1000)
-    public static void testExtenArrayAndReduce(){
+    public void testExtendArrayAndReduce(){
         ArrayDeque<Integer> que=new ArrayDeque<>();
         for(int i=0;i<16;i++){
             que.addLast(i);
@@ -41,8 +41,31 @@ public class ArrayDequeTest {
         assertEquals(2, que.size());
         que.printDeque();
     }
+
+    @Test
+    public void testAdd(){
+        ArrayDeque<Integer> dq=new ArrayDeque<>();
+        dq.addFirst(0);
+        assertEquals(0, dq.get(0));
+        dq.addFirst(2);
+        dq.addFirst(3);
+        dq.addFirst(4);
+        dq.addLast(5);
+        dq.addFirst(6);
+        dq.addFirst(7);
+        dq.get(1);
+        assertEquals(6,dq.get(1));
+        dq.addLast(9);
+        dq.get(5);
+        dq.addFirst(11);
+        dq.addLast(12);
+        dq.addLast(13);
+        dq.addLast(14);
+        dq.addFirst(15);
+        dq.addLast(16);
+        assertEquals(15,dq.removeFirst());
+    }
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
-        testExtenArrayAndReduce();
     }
 }

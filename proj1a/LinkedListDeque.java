@@ -4,11 +4,11 @@ The author is @GreyPreacher
 */
 public class LinkedListDeque<T> {
     public class Node{
-        public T item;//data that stored in the node
-        public Node pre;//the precedessor node
-        public Node next;//the next node of this node
+        private T item;//data that stored in the node
+        private Node pre;//the precedessor node
+        private Node next;//the next node of this node
 
-        public Node(T n,Node pree,Node nextt){
+        public Node(T n,Node pree,Node nextt){//for a node
             item=n;
             pre=pree;
             next=nextt;
@@ -101,9 +101,9 @@ public class LinkedListDeque<T> {
         }
     }
     public T getRecursive(int index){//get the index-th item of
-        if (index>=size){//the deque using recursion
+        if (index >= size){//the deque using recursion
             return null;
         }
-        return getRecursiveHelp(sentinel.next,index-1);
+        return getRecursiveHelp(sentinel.next, index);
     }
 }

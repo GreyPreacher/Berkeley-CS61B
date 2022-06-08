@@ -80,14 +80,14 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst(){
-        if(length>=16&&size/length<0.25){
+        if (length >= 16 && length/size >= 4){
             reduce();
         }
-        if (size==0){
+        if (size == 0){
             return null;
         }
         T result=array[front];
-        front=plus(front,length);
+        front=plus(front, length);
         size--;
         return result;
     }
