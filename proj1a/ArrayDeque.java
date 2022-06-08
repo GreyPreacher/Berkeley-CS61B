@@ -31,7 +31,7 @@ public class ArrayDeque<T> {
         }
         return index + 1;
     }
-    private void extendArray(){
+    private void extend(){
         T[] newArray=(T[]) new Object[length*2];
         int ptr1=front;
         int ptr2=length;
@@ -63,7 +63,7 @@ public class ArrayDeque<T> {
 
     public void addFirst(T item){
         if(size==length-1){
-            extendArray();
+            extend();
         }
         front=minus(front);
         array[front]=item;
@@ -72,7 +72,7 @@ public class ArrayDeque<T> {
 
     public void addLast(T item){
         if(size==length-1){
-            extendArray();
+            extend();
         }
         array[last]=item;
         last=plus(last,length);
