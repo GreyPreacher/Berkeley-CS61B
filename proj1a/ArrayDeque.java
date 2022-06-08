@@ -62,7 +62,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item){
-        if(size==length-1){
+        if(front==0){
             extend();
         }
         front=minus(front);
@@ -80,7 +80,7 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst(){
-        if (length >= 16 && length/size >= 4){
+        if (length >= 16 && (length/size >= 4)){
             reduce();
         }
         if (size == 0){
@@ -93,7 +93,7 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast(){
-        if(length>=16&&size/length<0.25){
+        if( length>=16 && (length/size>=4)){
             reduce();
         }
         if (size==0){
@@ -108,6 +108,8 @@ public class ArrayDeque<T> {
     public int size(){
         return size;
     }
+
+    public int length() { return length; }
 
     public boolean isEmpty(){
         return size==0;

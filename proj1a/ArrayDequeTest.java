@@ -65,6 +65,34 @@ public class ArrayDequeTest {
         dq.addLast(16);
         assertEquals(15,dq.removeFirst());
     }
+
+    @Test
+    public void testAdd2(){
+        ArrayDeque<Integer> dq=new ArrayDeque<>();
+        dq.addLast(0);
+        assertEquals(0, dq.removeLast());
+        dq.addLast(2);
+        dq.addFirst(3);
+        dq.addFirst(4);
+        assertEquals(4, dq.removeFirst());
+        dq.addFirst(6);
+        dq.addFirst(7);
+        dq.addFirst(8);
+        dq.addFirst(9);
+        assertEquals(16,dq.length());
+        assertEquals(9,dq.get(0));
+        dq.addFirst(10);
+        dq.addFirst(11);
+        dq.addFirst(12);
+        dq.addFirst(13);
+        assertEquals(2, dq.removeLast());
+        dq.addLast(15);
+        assertEquals(8, dq.get(5));
+        dq.printDeque();
+        assertEquals(16,dq.length());
+        assertEquals(10,dq.size());
+        assertEquals(13, dq.removeFirst());
+    }
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
     }
