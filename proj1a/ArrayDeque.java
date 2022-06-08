@@ -109,7 +109,6 @@ public class ArrayDeque<T> {
         return size;
     }
 
-    public int length(){ return length; }
 
     public boolean isEmpty(){
         return size==0;

@@ -109,7 +109,6 @@ public class ArrayDequeTest {
         d.addFirst(11);
         assertEquals(11, d.get(0));
         assertEquals(10, d.get(1));
-        assertEquals(16, d.length());
         d.addLast(12);
         //assertEquals(32,d.length());
         assertEquals(12, d.removeLast());
