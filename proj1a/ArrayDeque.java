@@ -62,7 +62,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item){
-        if(front==0){
+        if(front==1){
             extend();
         }
         front=minus(front);
@@ -71,7 +71,7 @@ public class ArrayDeque<T> {
     }
 
     public void addLast(T item){
-        if(size==length-1){
+        if(last==length){
             extend();
         }
         array[last]=item;
@@ -109,7 +109,7 @@ public class ArrayDeque<T> {
         return size;
     }
 
-    public int length() { return length; }
+    public int length(){ return length; }
 
     public boolean isEmpty(){
         return size==0;
