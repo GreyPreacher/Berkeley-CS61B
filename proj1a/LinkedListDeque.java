@@ -93,14 +93,17 @@ public class LinkedListDeque<T> {
         return p.item;
     }
 
-    public T getRecursive(Node p,int index){//get the index-th item of
+    private T getRecursiveHelp(Node start, int index) {
+        if (index == 0) {
+            return start.item;
+        } else {
+            return getRecursiveHelp(start.next, index - 1);
+        }
+    }
+    public T getRecursive(int index){//get the index-th item of
         if (index>=size){//the deque using recursion
             return null;
         }
-        if(index==0){
-            return p.item;
-        }else{
-            return getRecursive(p.next,index-1);
-        }
+        return getRecursiveHelp(sentinel.next,index-1);
     }
 }

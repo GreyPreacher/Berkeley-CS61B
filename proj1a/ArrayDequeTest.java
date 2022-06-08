@@ -12,8 +12,6 @@ public class ArrayDequeTest {
         assertEquals(3,que.size());
 
         que.printDeque();
-        assertEquals(3,que.front);
-        assertEquals(6,que.last);
         String first = que.removeFirst();
         assertEquals("one", first);
 
@@ -24,7 +22,7 @@ public class ArrayDequeTest {
     }
 
     @Test(timeout = 1000)
-    public static void test_extenArray_and_reduce(){
+    public static void testExtenArrayAndReduce(){
         ArrayDeque<Integer> que=new ArrayDeque<>();
         for(int i=0;i<16;i++){
             que.addLast(i);
@@ -45,6 +43,6 @@ public class ArrayDequeTest {
     }
     public static void main(String[] args) {
         System.out.println("Running tests.\n");
-        test_extenArray_and_reduce();
+        testExtenArrayAndReduce();
     }
 }

@@ -3,11 +3,11 @@ a list to emulate a deque.
 The author is @GreyPreacher
 */
 public class ArrayDeque<T> {
-    public T[] array;
-    public int size;
-    public int front;
-    public int last;
-    public int length;//useful when manipulate
+    private T[] array;
+    private int size;
+    private int front;
+    private int last;
+    private int length;//useful when manipulate
 
     public ArrayDeque() {
         array = (T[]) new Object[8];
@@ -17,21 +17,21 @@ public class ArrayDeque<T> {
         length=8;
     }
 
-    public int minus(int index){
+    private int minus(int index){
         if(index==0){
             return length-1;
         }
         return index-1;
     }
 
-    public int plus(int index,int length){
+    private int plus(int index,int length){
         index%=length;
         if(index==length-1){
             return 0;
         }
         return index+1;
     }
-    public void extendArray(){
+    private void extendArray(){
         T[] newArray=(T[]) new Object[length*2];
         int ptr1=front;
         int ptr2=length;
@@ -40,13 +40,13 @@ public class ArrayDeque<T> {
             ptr1=plus(ptr1,length);
             ptr2=plus(ptr2,length*2);
         }
-        front=length;
-        last=ptr2;
+        front = length;
+        last = ptr2;
         array=newArray;
         length*=2;
     }
 
-    public void reduce(){
+    private void reduce(){
         T[] newArray=(T[]) new Object[length/2];
         int ptr1=front;
         int ptr2=length/4;
