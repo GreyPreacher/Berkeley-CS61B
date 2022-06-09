@@ -25,10 +25,10 @@ public class ArrayDeque<T> {
     }
 
     private int plus(int index,int length){
-        index%=length;
-        if ( index == length - 1 ){
+        //index%=length;
+        /*if ( index == length - 1 ){
             return 0;
-        }
+        }*/
         return index + 1;
     }
     private void extend(){
@@ -80,7 +80,7 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst(){
-        if (length >= 16 && (length/size >= 4)){
+        if (length >= 16 && (length/size > 4)){
             reduce();
         }
         if (size == 0){
@@ -93,7 +93,7 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast(){
-        if( length>=16 && (length/size>=4)){
+        if( length >= 16 && ( length / size > 4 )){
             reduce();
         }
         if (size==0){
