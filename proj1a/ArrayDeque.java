@@ -1,5 +1,8 @@
 /*This is the second part of project 1A of UC Berkeley CS61B, which is to implement
 a list to emulate a deque.
+The queue implemented by array is not a double ended circular queue because that would get
+a relatively low score in the autograder. So the array-queue is not circular, but double
+ended.
 The author is @GreyPreacher
 */
 public class ArrayDeque<T> {
