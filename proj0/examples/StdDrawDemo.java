@@ -1,4 +1,4 @@
-/* 
+/*
  *
  * Make sure to see the more detailed description of
  * StdDraw at: http://introcs.cs.princeton.edu/java/15inout/ 
@@ -8,13 +8,13 @@
  * Or you can see the full documentation at:
  *   http://introcs.cs.princeton.edu/java/15inout/javadoc/StdDraw.html
  */
-
+package examples;
 public class StdDrawDemo {
 	public static String imageToDraw = "advice.png";
 
 	/* Draws three copies of the image in a rectangular pattern. */
 	public static void drawThree() {
-		/** Sets up the universe so it goes from 
+		/* Sets up the universe so it goes from
 		  * -100, -100 up to 100, 100 */
 		StdDraw.setScale(-100, 100);
 

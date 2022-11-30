@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import lab9.BSTMap;
 
+import java.util.Set;
+
 /**
  * Tests by Brendan Hu, Spring 2015, revised for 2018 by Josh Hug
  */
@@ -60,6 +62,7 @@ public class TestBSTMap {
         assertTrue(((Integer) b.get("starChild")).equals(5));
         b.put("KISS", 5);
         assertTrue(((Integer) b.get("KISS")).equals(5));
+        //System.out.println(b.root.key); -- it's KISS
         assertNotEquals(null, b.get("starChild"));
         assertEquals(2, b.size());
     }

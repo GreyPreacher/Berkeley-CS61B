@@ -21,7 +21,6 @@
  *       images and strings
  *
  ******************************************************************************/
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.FileDialog;
@@ -69,6 +68,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
+
 
 /**
  *  The {@code StdDraw} class provides a basic capability for
