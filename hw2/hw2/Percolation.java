@@ -22,7 +22,7 @@ public class Percolation {
         bottom = worldSize * worldSize + 1;
     }
 
-    public int locationCal(int row, int col){
+    private int locationCal(int row, int col){
         return row * worldSize + col;
     }
     public void open(int row, int col) {    // open the site (row, col) if it is not open already
