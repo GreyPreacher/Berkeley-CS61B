@@ -29,7 +29,7 @@
 - [x] [HW 1: Java Syntax and Sound Synthesis](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/hw1)
 - [x] [HW 2: Percolation](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/hw2)
 - [x] [HW 3: Hashing](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/hw3)
-- [ ] HW 4: Puzzle Solver
+- [x] [HW 4: Puzzle Solver](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/hw4)
 - [ ] HW 5: Seam Carving
 - [ ] HW 6: Boggle(Makeup)
 - [ ] HW 7: Compression(Makeup)
