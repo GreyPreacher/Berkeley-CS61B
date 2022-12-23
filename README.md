@@ -18,7 +18,7 @@
 - [ ] Lab08: Project 2 Demos
 - [x] [Lab09: Tree vs. Hash Maps](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab9)
 - [x] [Lab10: Heap Min PQ](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab10)
-- [ ] Lab11: Graphs
+- [x] [Lab11: Graphs](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab11)
 - [ ] Lab12: Merge and Quick Sort
 - [ ] Lab13: Radix Sorts
 - [ ] Lab14: Fractal Sound
