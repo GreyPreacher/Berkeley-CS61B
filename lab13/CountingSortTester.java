@@ -25,6 +25,11 @@ public class CountingSortTester {
     @Test
     public void testNaiveWithNonNegative() {
         int[] sortedNonNegative = CountingSort.naiveCountingSort(nonNegative);
+        int len = sortedNonNegative.length;
+        System.out.print("Sort result: ");
+        for (int i = 0; i < len; i += 1) {
+            System.out.print(sortedNonNegative[i] + " ");
+        }
         assertIsSorted(sortedNonNegative);
     }
 

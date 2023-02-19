@@ -26,12 +26,13 @@ public class CountingSort {
             counts[i]++;
         }
 
+
         // when we're dealing with ints, we can just put each value
         // count number of times into the new array
         int[] sorted = new int[arr.length];
         int k = 0;
-        for (int i = 0; i < counts.length; i += 1) {
-            for (int j = 0; j < counts[i]; j += 1, k += 1) {
+        for (int i = 0; i < counts.length; ++i) {
+            for (int j = 0; j < counts[i]; ++j, ++k) {
                 sorted[k] = i;
             }
         }
@@ -40,13 +41,13 @@ public class CountingSort {
         // counting sort that uses start position calculation
         int[] starts = new int[max + 1];
         int pos = 0;
-        for (int i = 0; i < starts.length; i += 1) {
+        for (int i = 0; i < starts.length; ++i) {
             starts[i] = pos;
             pos += counts[i];
         }
 
         int[] sorted2 = new int[arr.length];
-        for (int i = 0; i < arr.length; i += 1) {
+        for (int i = 0; i < arr.length; ++i) {
             int item = arr[i];
             int place = starts[item];
             sorted2[place] = item;
@@ -54,7 +55,7 @@ public class CountingSort {
         }
 
         // return the sorted array
-        return sorted;
+        return sorted2;
     }
 
     /**
@@ -66,7 +67,65 @@ public class CountingSort {
      * @param arr int array that will be sorted
      */
     public static int[] betterCountingSort(int[] arr) {
-        // TODO make counting sort work with arrays containing negative numbers.
-        return null;
+        if (arr.length == 1 || arr.length == 0) {
+            return arr;
+        }
+        int negCount = 0, posCount = 0;
+        for (int i: arr) {
+            if (i < 0) {
+                negCount += 1;
+            } else {
+                posCount += 1;
+            }
+        }
+        if (negCount == 0) return naiveCountingSort(arr);
+        if (posCount == 0) return negativeCountingSort(arr);
+        int[] neg = new int[negCount];
+        int[] pos = new int[posCount];
+        int negIndex = 0, posIndex = 0;
+        for (int i : arr) {
+            if (i < 0) {
+                neg[negIndex++] = i;
+            } else {
+                pos[posIndex++] = i;
+            }
+        }
+
+        int[] sortedNeg = negativeCountingSort(neg);
+        int[] sortedPos = naiveCountingSort(pos);
+        int[] sorted = new int[sortedNeg.length + sortedPos.length];
+        int sortedIndex = 0;
+        for (int i : sortedNeg) {
+            sorted[sortedIndex++] = i;
+        }
+        for (int i : sortedPos) {
+            sorted[sortedIndex++] = i;
+        }
+        return sorted;
+    }
+
+    private static int[] negativeCountingSort(int[] arr) {
+        int[] absArr = naiveCountingSort(flip(arr));
+        reverse(absArr);
+        return flip(absArr);
+    }
+
+    private static int[] flip(int[] arr) {
+        int[] flipped = new int[arr.length];
+        for (int i = 0; i < arr.length; ++i) {
+            flipped[i] = -arr[i];
+        }
+        return flipped;
+    }
+
+    private static void reverse(int[] arr) {
+        int lo = 0, hi = arr.length - 1;
+        while (lo < hi) {
+            int tmp = arr[lo];
+            arr[lo] = arr[hi];
+            arr[hi] = tmp;
+            lo++;
+            hi--;
+        }
     }
 }
