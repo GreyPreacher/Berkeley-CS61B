@@ -20,7 +20,7 @@
 - [x] [Lab10: Heap Min PQ](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab10)
 - [x] [Lab11: Graphs](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab11)
 - [x] [Lab12: Merge and Quick Sort](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab12)
-- [ ] Lab13: Radix Sorts
+- [x] [Lab13: Radix Sorts](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab13)
 - [ ] Lab14: Fractal Sound
 - [ ] Lab15: HugLife(Makeup)
 
