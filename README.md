@@ -42,4 +42,4 @@
   - [x] [Project 1B: Testing and HoFs](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/proj1b)
   - [x] [Project 1 Gold: Autograding](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/proj1gold)
 - [ ] Project2: CS61BYoG
-- [ ] Project3: Bear Maps
+- [x] [Project3: Bear Maps](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/proj3)
