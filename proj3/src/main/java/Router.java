@@ -1,5 +1,4 @@
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,7 +24,66 @@ public class Router {
      */
     public static List<Long> shortestPath(GraphDB g, double stlon, double stlat,
                                           double destlon, double destlat) {
-        return null; // FIXME
+        GraphDB.Vertex s = g.vertex.get(g.closest(stlon, stlat));
+        GraphDB.Vertex t = g.vertex.get(g.closest(destlon, destlat));
+        Iterator<Long> i = g.vertex.keySet().iterator();
+        Map<Long, Double> passedDistance = new HashMap<>();
+        Map<Long, Double> estimatedDistance = new HashMap<>();
+        List<Long> returnList = new ArrayList<>();
+        while (i.hasNext()) {
+            Long vID = i.next();
+            passedDistance.put(vID, Double.POSITIVE_INFINITY);
+            estimatedDistance.put(vID, g.distance(vID, t.id));
+        }
+        Map<Long, Long> edgeTo = new HashMap<>();
+        Set<Long> marked = new HashSet<>();
+        Comparator<Long> cmp = new Comparator<Long>(){
+            @Override
+            public int compare(Long o1, Long o2) {
+                if (passedDistance.get(o1) + estimatedDistance.get(o1)
+                        < passedDistance.get(o2) + estimatedDistance.get(o2)) {
+                    return -1;
+                } else if (passedDistance.get(o1) + estimatedDistance.get(o1)
+                        == passedDistance.get(o2) + estimatedDistance.get(o2)) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            }
+        };
+        PriorityQueue<Long> pq = new PriorityQueue<Long>(cmp);
+
+        passedDistance.replace(s.id, 0.0);
+        pq.add(s.id);
+        long vID = pq.poll();
+        marked.add(vID);
+
+        while (vID != t.id) {
+            for (long wID : g.adjacent(vID)) {
+                if (passedDistance.get(vID) + g.distance(vID, wID) < passedDistance.get(wID)) {
+                    passedDistance.replace(wID, passedDistance.get(vID) + g.distance(vID, wID));
+                    edgeTo.put(wID, vID);
+                }
+                pq.add(wID);
+            }
+            vID = pq.poll();
+            while (marked.contains(vID)) {
+                vID = pq.poll();
+            }
+            marked.add(vID);
+        }
+        Stack<Long> stack = new Stack<>();
+
+        Long id = t.id;
+        stack.add(id);
+        while (id != s.id) {
+            stack.add(edgeTo.get(id));
+            id = edgeTo.get(id);
+        }
+        while (!stack.empty()) {
+            returnList.add(stack.pop());
+        }
+        return returnList;
     }
 
     /**

@@ -89,7 +89,11 @@ public class MapServer {
      * This is for testing purposes, and you may fail tests otherwise.
      **/
     public static void initialize() {
-        graph = new GraphDB(OSM_DB_PATH);
+        try {
+            graph = new GraphDB(OSM_DB_PATH);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         rasterer = new Rasterer();
     }
 
