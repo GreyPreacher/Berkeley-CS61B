@@ -21,7 +21,7 @@
 - [x] [Lab11: Graphs](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab11)
 - [x] [Lab12: Merge and Quick Sort](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab12)
 - [x] [Lab13: Radix Sorts](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab13)
-- [ ] Lab14: Fractal Sound
+- [x] [Lab14: Fractal Sound](https://github.com/GreyPreacher/Berkeley-CS61B/tree/main/lab14)
 - [ ] Lab15: HugLife(Makeup)
 
 # HWs
